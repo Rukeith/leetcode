@@ -12,4 +12,4 @@ const getSum = (a, b) => {
     return a;
 };
 
-console.log(getSum(1, 2));
+//console.log(getSum(1, 2));
