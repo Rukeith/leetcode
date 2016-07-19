@@ -1,4 +1,18 @@
 /**
+ * 2. Add Two Numbers
+ * You are given two linked lists representing two non-negative numbers.
+ * The digits are stored in reverse order and each of their nodes contain a single digit.
+ * Add the two numbers and return it as a linked list.
+ *
+ * Example:
+ * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
+ * Output: 7 -> 0 -> 8
+
+ * URL:
+ * https://leetcode.com/problems/add-two-numbers/
+ */
+
+/**
  * Definition for singly-linked list.
  * function ListNode(val) {
  *     this.val = val;
@@ -10,6 +24,28 @@
  * @param {ListNode} l2
  * @return {ListNode}
  */
+ 
+// let l1 = {
+//     val: 2,
+//     next: { 
+//         val: 4,
+//         next: {
+//             val: 3,
+//             next: null
+//         }
+//     }
+// }
+
+// let l2 = {
+//     val: 5,
+//     next: { 
+//         val: 6,
+//         next: {
+//             val: 4,
+//             next: null
+//         }
+//     }
+// }
  
  
 const addTwoNumbers = (l1, l2) => {
@@ -40,3 +76,5 @@ const addTwoNumbers = (l1, l2) => {
     answer = temp;
     return answer;
 };
+
+// console.log(addTwoNumbers(l1, l2));
