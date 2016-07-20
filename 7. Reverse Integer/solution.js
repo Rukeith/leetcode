@@ -23,22 +23,20 @@
  * @return {number}
  */
 var reverse = function(x) {
-    if (x === 0) return 0;
-    var tempString = x.toString().split("");
-    var temp = [];
-    var answer = 0;
-    var positve = (tempString[0] !== "-") ? true : false;
+  var MAX = (Math.pow(2, 31) - 1);
+  if (x === 0 || Math.abs(x) > MAX) return 0;
+  var temp = [], answer = 0;
+  var tempString = x.toString().split("");
+  var positve = (tempString[0] !== "-") ? true : false;
 
-    if (!positve)
-        tempString.splice(0, 1);
+  if (!positve) tempString.splice(0, 1);
+  for (var i = (tempString.length - 1); i > -1; i--)
+    if (Number(tempString[i]) !== 0)
+      answer = answer + Number(tempString[i]) * Math.pow(10, i);
 
-    for (var i = (tempString.length - 1); i > -1; i--) {
-        if (Number(tempString[i]) !== 0)
-            answer = answer + Number(tempString[i]) * Math.pow(10, i);
-    }
-    if (!positve)
-        answer = 0 - answer;
-    return answer;
+  if (Math.abs(answer) > MAX) return 0;
+  if (!positve) answer = 0 - answer;
+  return answer;
 };
 
 // console.log(reverse(321));
