@@ -1,4 +1,7 @@
 /**
+ * @param {number[]} height
+ * @return {number}
+ * 
  * 11. Container With Most Water
  * Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n
  * vertical lines are drawn such that the two endpoints of line i is at (i, ai) and (i, 0). Find two lines,
@@ -9,24 +12,20 @@
  * URL:
  * https://leetcode.com/problems/container-with-most-water/
  */
-
-/**
- * @param {number[]} height
- * @return {number}
- */
 var maxArea = function(height) {
-  var answer = 0;
-  var i = 0;
-  var j = height.length - 1;
-
-  while (i < j) {
-    answer = Math.max(answer, Math.min(height[i], height[j]) * (j - i));
-
-    if (height[i] < height[j])
-      i++;
-    else
-      j--;
+  if (height === null || height.length < 2) {
+    return 0;
   }
 
- return answer;
+  let max = 0;
+  let left = 0;
+  let right = height.length - 1;
+
+  while (left < right) {
+    max = Math.max(max, (right - left) * Math.min(height[left], height[right]));
+    if (height[left] < height[right]) left++;
+    else right--;
+  }
+
+  return max;
 };

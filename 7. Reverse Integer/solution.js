@@ -1,4 +1,7 @@
 /**
+ * @param {number} x
+ * @return {number}
+ * 
  * 7. Reverse Integer
  * Reverse digits of an integer.
  * Have you thought about this?
@@ -17,26 +20,13 @@
  * URL:
  * https://leetcode.com/problems/reverse-integer/
  */
-
-/**
- * @param {number} x
- * @return {number}
- */
 var reverse = function(x) {
-  var MAX = (Math.pow(2, 31) - 1);
-  if (x === 0 || Math.abs(x) > MAX) return 0;
-  var temp = [], answer = 0;
-  var tempString = x.toString().split("");
-  var positve = (tempString[0] !== "-") ? true : false;
-
-  if (!positve) tempString.splice(0, 1);
-  for (var i = (tempString.length - 1); i > -1; i--)
-    if (Number(tempString[i]) !== 0)
-      answer = answer + Number(tempString[i]) * Math.pow(10, i);
-
-  if (Math.abs(answer) > MAX) return 0;
-  if (!positve) answer = 0 - answer;
-  return answer;
+  let absX = Math.abs(x);
+  let result = 0;
+  while (absX > 0) {
+    result = result * 10 + absX % 10;
+    absX = parseInt(absX / 10, 10);
+  }
+  result = x < 0 ? -result : result;
+  return result >= -Math.pow(2, 31) && result <= Math.pow(2, 31) - 1 ? result : 0;
 };
-
-// console.log(reverse(321));

@@ -1,4 +1,8 @@
 /**
+ * @param {number[]} nums
+ * @param {number} val
+ * @return {number}
+ * 
  * 27. Remove Element
  * Given an array and a value, remove all instances of that value in place and return the new length.
  * Do not allocate extra space for another array, you must do this in place with constant memory.
@@ -16,21 +20,11 @@
  * URL:
  * https://leetcode.com/problems/remove-element/
  */
-
-/**
- * @param {number[]} nums
- * @param {number} val
- * @return {number}
- */
 var removeElement = function(nums, val) {
-  var i = 0;
-
-  for (var j = 0; j < nums.length; j++) {
-      if (nums[j] !== val) {
-          nums[i] = nums[j];
-          i++;
-      }
+  const length = nums.length - 1;
+  for (let i = length; i >= 0; i--) {
+    if (nums[i] === val) {
+      nums.splice(i, 1);
+    }
   }
-
-  return i;
 };
