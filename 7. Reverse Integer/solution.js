@@ -1,7 +1,4 @@
 /**
- * @param {number} x
- * @return {number}
- * 
  * 7. Reverse Integer
  * Reverse digits of an integer.
  * Have you thought about this?
@@ -16,6 +13,9 @@
  * Example:
  * Example1: x = 123, return 321
  * Example2: x = -123, return -321
+ * 
+ * @param {number} x
+ * @return {number}
  *
  * URL:
  * https://leetcode.com/problems/reverse-integer/

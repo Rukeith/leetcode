@@ -1,7 +1,4 @@
 /**
- * @param {number[]} digits
- * @return {number[]}
- * 
  * 66. Plus One
  * Given a non-negative integer represented as a non-empty array of digits, plus one to the integer.
  * You may assume the integer do not contain any leading zero, except the number 0 itself.
@@ -10,6 +7,9 @@
  * Example:
  * [1, 9] --> [2, 0]
  * [2, 3, 2] --> [2, 3, 3]
+ * 
+ * @param {number[]} digits
+ * @return {number[]}
  * 
  * URL:
  * https://leetcode.com/problems/plus-one/description/

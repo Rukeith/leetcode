@@ -1,7 +1,4 @@
 /**
- * @param {number} num
- * @return {number}
- * 
  * 258. Add Digits
  * Given a non-negative integer num, repeatedly add all its digits until the result has only one digit.
  * 
@@ -13,6 +10,9 @@
  * 
  * Credits:
  * Special thanks to @jianchao.li.fighter for adding this problem and creating all test cases.
+ * 
+ * @param {number} num
+ * @return {number}
  * 
  * URL:
  * https://leetcode.com/problems/remove-element/

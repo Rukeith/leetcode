@@ -1,8 +1,4 @@
 /**
- * @param {ListNode} l1
- * @param {ListNode} l2
- * @return {ListNode}
- * 
  * 2. Add Two Numbers
  * You are given two linked lists representing two non-negative numbers.
  * The digits are stored in reverse order and each of their nodes contain a single digit.
@@ -17,6 +13,10 @@
  *     this.val = val;
  *     this.next = null;
  * }
+ * 
+ * @param {ListNode} l1
+ * @param {ListNode} l2
+ * @return {ListNode}
  * 
  * URL:
  * https://leetcode.com/problems/add-two-numbers/

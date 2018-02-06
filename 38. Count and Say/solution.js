@@ -1,7 +1,4 @@
 /**
- * @param {number} n
- * @return {string}
- * 
  * 38. Count and Say
  * The count-and-say sequence is the sequence of integers with the first five terms as following:
  * 1.     1
@@ -24,6 +21,9 @@
  * Example 2:
  * Input: 4
  * Output: "1211"
+ * 
+ * @param {number} n
+ * @return {string}
  * 
  * URL:
  * https://leetcode.com/problems/count-and-say/description/

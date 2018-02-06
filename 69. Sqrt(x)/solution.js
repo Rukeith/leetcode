@@ -1,7 +1,4 @@
 /**
- * @param {number} x
- * @return {number}
- * 
  * 69. Sqrt(x)
  * Implement int sqrt(int x).
  * Compute and return the square root of x.
@@ -15,6 +12,9 @@
  * Input: 8
  * Output: 2
  * Explanation: The square root of 8 is 2.82842..., and since we want to return an integer, the decimal part will be truncated.
+ * 
+ * @param {number} x
+ * @return {number}
  * 
  * URL:
  * https://leetcode.com/problems/sqrtx/description/
