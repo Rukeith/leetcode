@@ -23,6 +23,9 @@
  * var param_3 = obj.top()
  * var param_4 = obj.getMin()
  * 
+ * Hint:
+ * Consider each node in the stack having a minimum value.
+ * 
  * URL:
  * https://leetcode.com/problems/min-stack/description/
  */
