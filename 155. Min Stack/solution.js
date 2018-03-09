@@ -34,8 +34,8 @@
  */
 var MinStack = function() {
   this.arr = [];
-  this.min = Number.MAX_SAFE_INTEGER;
   this.max = Number.MIN_SAFE_INTEGER;
+  this.min = Number.MAX_SAFE_INTEGER;
 };
 
 /** 
@@ -44,7 +44,7 @@ var MinStack = function() {
  */
 MinStack.prototype.push = function(x) {
   if (x > this.max) this.max = x;
-  if (x < this.min) this.min = x;
+  if (this.min > x) this.min = x;
   this.arr.push(x);
 };
 
@@ -52,21 +52,22 @@ MinStack.prototype.push = function(x) {
  * @return {void}
  */
 MinStack.prototype.pop = function() {
-  return this.arr.pop();
+  const popNumber = this.arr.pop();
   if (this.arr.length < 1) {
-    this.max = 0;
-    this.min = 0;
+    this.max = Number.MIN_SAFE_INTEGER;
+    this.min = Number.MAX_SAFE_INTEGER;
   } else {
     this.max = Math.max(...this.arr);
     this.min = Math.min(...this.arr);
   }
+  return popNumber;
 };
 
 /**
  * @return {number}
  */
 MinStack.prototype.top = function() {
-  return this.max;
+  return this.arr[this.arr.length - 1];
 };
 
 /**
