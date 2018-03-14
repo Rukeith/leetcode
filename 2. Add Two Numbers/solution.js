@@ -1,12 +1,4 @@
 /**
- * 2. Add Two Numbers
- * You are given two linked lists representing two non-negative numbers.
- * The digits are stored in reverse order and each of their nodes contain a single digit.
- * Add the two numbers and return it as a linked list.
- *
- * Example:
- * Input: (2 -> 4 -> 3) + (5 -> 6 -> 4)
- * Output: 7 -> 0 -> 8
  * 
  * Definition for singly-linked list.
  * function ListNode(val) {
@@ -17,9 +9,6 @@
  * @param {ListNode} l1
  * @param {ListNode} l2
  * @return {ListNode}
- * 
- * URL:
- * https://leetcode.com/problems/add-two-numbers/
  */
 var addTwoNumbers = function(l1, l2) {
   const l1val = l1 ? l1.val : 0;
