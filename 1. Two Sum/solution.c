@@ -10,9 +10,7 @@ int* twoSum(int* nums, int numsSize, int target) {
       ans[0] = i;
       ans[1] = index_plus_one[rest] - 1;
       return ans;
-    }
-    else
-      index_plus_one[nums[i]] = i + 1;
+    } else index_plus_one[nums[i]] = i + 1;
   }
   return NULL;
 }
