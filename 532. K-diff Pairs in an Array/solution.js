@@ -9,7 +9,11 @@ var findPairs = function(nums, k) {
   nums.forEach(x => tempObj[x] = (tempObj[x]) ? tempObj[x] + 1 : 1);
   let count = 0;
   Object.keys(tempObj).forEach(key => {
-    if ((k === 0 && tempObj[key] >= 2) || tempObj[Number(key) + k]) count++;
+    if (k === 0) {
+      if (tempObj[key] >= 2) count++;
+    } else {
+      if (tempObj[Number(key) + k]) count++;
+    }
   });
   return count;
 };
