@@ -28,7 +28,7 @@ var addTwoNumbers = function(l1, l2) {
 
   const node = new ListNode(val);
   node.next = (l1 && l1.next) || (l2 && l2.next)
-    ? addTwoNumbers(l1 ? l1.next : null, l2 ? l2.next: null)
+    ? addTwoNumbers(l1 ? l1.next : null, l2 ? l2.next : null)
     : null;
 
   return node;
