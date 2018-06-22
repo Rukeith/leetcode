@@ -1,38 +1,28 @@
 /**
- * 13. Roman to Integer
- * Given a roman numeral, convert it to an integer.
- * Input is guaranteed to be within the range from 1 to 3999.
- * 
  * @param {string} s
  * @return {number}
- * 
- * URL:
- * https://leetcode.com/problems/roman-to-integer/description/
  */
 var romanToInt = function(s) {
-  const hash = {
-    M: 1000,
-    D: 500,
-    C: 100,
-    L: 50,
-    X: 10,
+  const romanNumerals = {
+    I: 1,
     V: 5,
-    I: 1
+    X: 10,
+    L: 50,
+    C: 100,
+    D: 500,
+    M: 1000
   };
 
-  let sum = 0;
-  let lastValue = null;
-  for(let n = s.length - 1; n > -1; n--) {
-    const char = s.charAt(n);
-    const charVal = hash[char];
-    
-    if (lastValue && lastValue > charVal) {
-      sum -= charVal;
+  if (s.length < 1) return null;
+
+  let result = romanNumerals[s[s.length - 1]];
+  for (let i = 0; i < s.length - 1; i++) {
+    if (romanNumerals[s[i]] < romanNumerals[s[i + 1]]) {
+      result -= romanNumerals[s[i]];
     } else {
-      sum += charVal;
-      lastValue = charVal;
+      result += romanNumerals[s[i]];
     }
   }
 
-  return sum;
+  return result;
 };
