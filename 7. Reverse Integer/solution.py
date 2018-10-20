@@ -6,13 +6,13 @@ class Solution:
         """
         max = pow(2, 31)
         if x < 0:
-            y = -1 * int(str(-x)[::-1])
+            result = -1 * int(str(-x)[::-1])
         else:
-            y = int(str(x)[::-1])
+            result = int(str(x)[::-1])
     
-        if y > max or y < -max:
-            y = 0
-        return y
+        if result > max or result < -max:
+            result = 0
+        return result
 
 # [::-1] 一種反轉字串的 extended slice syntax
 # https://docs.python.org/3.6/whatsnew/2.3.html#extended-slices

@@ -8,7 +8,8 @@ var isPalindrome = function(x) {
 
   let i = xS.length - 1;
   let k = 0;
-  while(i > k) {
+
+  while (i > k) {
     if (xS[i] !== xS[k]) return false;
     i--;
     k++;
