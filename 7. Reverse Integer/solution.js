@@ -3,12 +3,19 @@
  * @return {number}
  */
 var reverse = function(x) {
-  let absX = Math.abs(x);
+  const isNeg = x < 0;
   let result = 0;
-  while (absX > 0) {
-    result = result * 10 + absX % 10;
-    absX = parseInt(absX / 10, 10);
+  x = Math.abs(x);
+
+  while (x > 0) {
+    result = result * 10 + x % 10;
+    x = Math.floor(x / 10);
   }
-  result = x < 0 ? -result : result;
-  return result >= Number.MIN_SAFE_INTEGER && result <= Number.MAX_SAFE_INTEGER ? result : 0;
+
+  result = isNeg ? -result : result;
+
+  if ((isNeg && result < Math.pow(-2, 31)) || (!isNeg && result > (Math.pow(2, 31) - 1)))
+    return 0;
+  
+  return result;
 };

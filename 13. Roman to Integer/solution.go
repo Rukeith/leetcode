@@ -1,41 +1,29 @@
 func romanToInt(s string) int {
-	var rst int
-	var nextI byte
 
-	for i := len(s) - 1; i >= 0; i-- {
-		switch s[i] {
-		default:
-			return -1
-		case 'I':
-			if nextI == 'V' || nextI == 'X' {
-				rst--
-			} else {
-				rst++
-			}
-		case 'X':
-			if nextI == 'L' || nextI == 'C' {
-				rst -= 10
-			} else {
-				rst += 10
-			}
-		case 'C':
-			if nextI == 'D' || nextI == 'M' {
-				rst -= 100
-			} else {
-				rst += 100
-			}
-		case 'V':
-			rst += 5
-		case 'L':
-			rst += 50
-		case 'D':
-			rst += 500
-		case 'M':
-			rst += 1000
-		}
-
-		nextI = s[i]
+	mapping := map[string]int {
+		"I": 1,
+		"V": 5,
+		"X": 10,
+		"L": 50,
+		"C": 100,
+		"D": 500,
+		"M": 1000,
 	}
 
-	return rst
+	var max int = 0
+	var sum int = 0
+
+	for i := len(s) - 1; i >= 0; i-- {
+		romanLetter := s[i : i + 1]
+		romanValue := mapping[romanLetter]
+
+		if romanValue < max {
+			sum -= romanValue
+		} else {
+			max = romanValue
+			sum += romanValue
+		}
+	}
+
+	return sum
 }
