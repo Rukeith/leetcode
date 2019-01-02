@@ -11,6 +11,11 @@ Cracking the LeetCode with multiple programming language
 | 11  | Algorithms | Container With Most Water | Medium       |     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    |                    |                    |                    |                    |                    |
 | 13  | Algorithms | Roman to Integer          | Easy       |     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    |                    |                    |                    |                    |                    |
 | 14  | Algorithms | Longest Common Prefix     | Easy       |     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    |                    |                    |                    |                    |                    |
+| 20  | Algorithms | Valid Parentheses     | Easy       |     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    |                    |                    |                    |                    |                    |
+| 21  | Algorithms | Merge Two Sorted Lists     | Easy       |     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    |                    |                    |                    |                    |                    |
+| 26  | Algorithms | Remove Duplicates from Sorted Array     | Easy       |     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    |                    |                    |                    |                    |                    |
+| 27  | Algorithms | Remove Element     | Easy       |     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    |                    |                    |                    |                    |                    |
+| 28  | Algorithms | Implement strStr()    | Easy       |     | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |                    |                    |                    |                    |                    |                    |
 
 # Contributor
 

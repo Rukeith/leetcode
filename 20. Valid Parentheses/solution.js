@@ -2,28 +2,25 @@
  * @param {string} s
  * @return {boolean}
  */
-var isValid = function(s) {
-  const stack = [];
-  const open = {
+var isValid = function (s) {
+  const obj = {
+    '(': ")",
     '{': '}',
-    '[': ']',
-    '(': ')',
-  }
-  const closed = {
-    '}': true,
-    ']': true,
-    ')': true,
+    '[': "]"
+  };
+  const p = [];
+
+  for (let k = 0; k < s.length; k++) {
+    if (obj[s[k]]) {
+      p.push(obj[s[k]]);
+      continue;
+    }
+
+    if (s[k] !== p[p.length - 1]) {
+      return false;
+    }
+    p.pop();
   }
 
-  for (let i = 0; s.length > i; i++) {
-    const curr = s[i];
-    if (open[curr]) {
-      stack.push(curr);
-    } else if (closed[curr]) {
-      const last = stack.pop();
-      if (open[last] !== curr) return false;
-    }
-  }
-  
-  return stack.length === 0;
+  return (p.length === 0);
 };
