@@ -1,16 +1,16 @@
 class Solution:
-    def longestCommonPrefix(self, strs):
+    def longestCommonPrefix(self, strs: List[str]) -> str:
         """
         :type strs: List[str]
         :rtype: str
-        """ 
-        if not strs: return ''
-	    # since list of string will be sorted and retrieved min max by alphebetic order
+        """
+        if not strs:
+            return ''
+
         s1 = min(strs)
         s2 = max(strs)
 
         for i, c in enumerate(s1):
             if c != s2[i]:
-                # stop until hit the split index
                 return s1[:i]
         return s1

@@ -8,9 +8,3 @@ func twoSum(nums []int, target int) []int {
 	}
 	return nil
 }
-
-/* 
- * 解題思維：
- * 使用 map 將所有組合比對
- * 如果比對到一組就馬上回傳
- */

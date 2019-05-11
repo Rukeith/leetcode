@@ -1,5 +1,5 @@
 class Solution:
-    def reverse(self, x):
+    def reverse(self, x: int) -> int:
         """
         :type x: int
         :rtype: int
@@ -9,7 +9,7 @@ class Solution:
             result = -1 * int(str(-x)[::-1])
         else:
             result = int(str(x)[::-1])
-    
+
         if result > max or result < -max:
             result = 0
         return result

@@ -1,6 +1,6 @@
 func romanToInt(s string) int {
 
-	mapping := map[string]int {
+	mapping := map[string]int{
 		"I": 1,
 		"V": 5,
 		"X": 10,
@@ -14,7 +14,7 @@ func romanToInt(s string) int {
 	var sum int = 0
 
 	for i := len(s) - 1; i >= 0; i-- {
-		romanLetter := s[i : i + 1]
+		romanLetter := s[i : i+1]
 		romanValue := mapping[romanLetter]
 
 		if romanValue < max {
