@@ -50,9 +50,14 @@ Cracking the LeetCode with multiple programming language
 | 172 | Algorithms | Factorial Trailing Zeroes                  | Easy       |                    | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |       |        |       |     |     |     |      |      |
 | 175 | Database   | Combine Two Tables                         | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
 | 176 | Database   | Second Highest Salary                      | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 177 | Database   | Nth Highest Salary                         | Medium     | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
 | 181 | Database   | Employees Earning More Than Their Managers | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
 | 182 | Database   | Duplicate Emails                           | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
 | 183 | Database   | Customers Who Never Order                  | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 192 | Shell      | Word Frequency                             | Medium     |                    |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 193 | Shell      | Valid Phone Numbers                        | Easy       |                    |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 194 | Shell      | Transpose File                             | Medium     |                    |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 195 | Shell      | Tenth Line                                 | Easy       |                    |                    |                    |                    |       |        |       |     |     |     |      |      |
 
 # Contributor
 
