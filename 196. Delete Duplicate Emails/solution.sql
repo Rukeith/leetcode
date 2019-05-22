@@ -1,8 +1,9 @@
--- Write your MySQL query statement below
--- DELETE p1 FROM Person p1, Person p2
--- WHERE p1.Email = p2.Email AND p1.Id > p2.Id
-DELETE FROM Person WHERE Id NOT IN (
-  SELECT y.* FROM (
-    SELECT MIN(z.Id) FROM Person AS z GROUP BY z.Email
-  ) AS y
-)
+# Write your MySQL query statement below
+
+DELETE
+FROM person
+WHERE id NOT IN
+    (SELECT a.id
+     FROM
+       (SELECT Min(p.id) AS ID
+        FROM person p GROUP  BY p.email) AS a)

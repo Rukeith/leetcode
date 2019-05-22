@@ -1,13 +1,10 @@
 # Write your MySQL query statement below
-SELECT
-    E1.Name AS Employee
-FROM Employee E1
-    LEFT JOIN (
-        SELECT
-            *
-        FROM
-            Employee
-        GROUP BY
-            id) E2 ON E1.ManagerId = E2.Id
-    WHERE
-        E1.Salary > E2.Salary
+
+SELECT a.Name AS Employee
+FROM Employee a
+LEFT JOIN
+  (SELECT Id,
+          Salary
+   FROM Employee
+   GROUP BY Id) b ON a.ManagerId = b.Id
+WHERE a.Salary > b.Salary;

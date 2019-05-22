@@ -1,3 +1,5 @@
+# Write your MySQL query statement below
+
 CREATE FUNCTION getNthHighestSalary(N INT) RETURNS INT
 BEGIN
 DECLARE M INT;
