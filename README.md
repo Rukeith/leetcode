@@ -58,13 +58,19 @@ Cracking the LeetCode with multiple programming language
 | 183 | Database   | Customers Who Never Order                  | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
 | 184 | Database   | Department Highest Salary                  | Medium     | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
 | 185 | Database   | Department Top Three Salaries              | Hard       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
-| 196 | Database   | Delete Duplicate Emails                    | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
-| 197 | Database   | Rising Temperature                         | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
-| 262 | Database   | Trips and Users                            | Hard       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
 | 192 | Shell      | Word Frequency                             | Medium     |                    |                    |                    |                    |       |        |       |     |     |     |      |      |
 | 193 | Shell      | Valid Phone Numbers                        | Easy       |                    |                    |                    |                    |       |        |       |     |     |     |      |      |
 | 194 | Shell      | Transpose File                             | Medium     |                    |                    |                    |                    |       |        |       |     |     |     |      |      |
 | 195 | Shell      | Tenth Line                                 | Easy       |                    |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 196 | Database   | Delete Duplicate Emails                    | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 197 | Database   | Rising Temperature                         | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 262 | Database   | Trips and Users                            | Hard       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 595 | Database   | Big Countries                              | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 596 | Database   | Classes More Than 5 Students               | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 601 | Database   | Human Traffic of Stadium                   | Hard       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 620 | Database   | Not Boring Movies                          | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 626 | Database   | Exchange Seats                             | Medium     | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
+| 627 | Database   | Swap Salary                                | Easy       | :heavy_check_mark: |                    |                    |                    |       |        |       |     |     |     |      |      |
 
 # Contributor
 

@@ -1,3 +1,4 @@
 # Write your MySQL query statement below
+
 UPDATE salary
-SET sex = CHAR(ascii(sex) ^ 11);
+SET sex = IF(sex = 'm', 'f', 'm');
