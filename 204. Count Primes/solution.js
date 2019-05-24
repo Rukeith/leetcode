@@ -3,16 +3,19 @@
  * @return {number}
  */
 var countPrimes = function(n) {
-  const notPrime = new Array(n);
-  let count = 0;
+  if (n <= 2) return 0;
 
-  for (let i = 2; i < n; i++) {
-    if (notPrime[i]) {
+  let count = 1;
+  const isPrime = new Uint8Array(n);
+  for (let i = 3; i < n; i += 2) {
+    if (isPrime[i] === 0) {
       count++;
-      for (let j = 2; i * j < n; j++) {
-        notPrime[i * j] = true;
+
+      for (let j = 2 * i; j < n; j += i) {
+        isPrime[j] = 1;
       }
     }
   }
+
   return count;
 };
