@@ -1,14 +1,19 @@
-# [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/description)
-Given two strings *s* and *t*, write a function to determine if *t* is an anagram of *s*.
+# [242. Valid Anagram](https://leetcode.com/problems/valid-anagram/)
 
-For example,
-```
-s = "anagram", t = "nagaram", return true.
-s = "rat", t = "car", return false.
-```
+Given two strings _s_ and _t_ , write a function to determine if _t_ is an anagram of _s_.
 
-**Note:**
+**Example 1:**
+
+    Input: s = "anagram", t = "nagaram"
+    Output: true
+
+**Example 2:**
+
+    Input: s = "rat", t = "car"
+    Output: false
+
+**Note:**  
 You may assume the string contains only lowercase alphabets.
 
-**Follow up:**
+**Follow up:**  
 What if the inputs contain unicode characters? How would you adapt your solution to such case?

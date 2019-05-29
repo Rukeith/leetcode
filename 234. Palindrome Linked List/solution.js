@@ -12,12 +12,12 @@
 var isPalindrome = function(head) {
   const arrNode = [];
   let currNode = head;
-  while(currNode) {
+  while (currNode) {
     arrNode.push(currNode.val);
     currNode = currNode.next;
   }
 
-  for(let i = 0; i < arrNode.length / 2; i++) {
+  for (let i = 0; i < arrNode.length / 2; i++) {
     if (arrNode[i] !== arrNode[arrNode.length - 1 - i]) {
       return false;
     }

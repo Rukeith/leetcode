@@ -10,23 +10,20 @@
  * @return {string[]}
  */
 var binaryTreePaths = function(root) {
-  if (!root) return [];
-  const result = [];
-  _depth(root, '', result);
-  return result;
-};
-
-var _depth = function(root, str, result) {
-  if (root) {
-    str += root.val;
-    if (root.left) {
-      _depth(root.left, str + '->', result);
+  const res = [];
+  const cur = [];
+  if (root === null) return res;
+  function dfs(node) {
+    cur.push(node.val);
+    if (node.left === null && node.right === null) {
+      res.push(cur.join("->"));
+      cur.pop();
+      return;
     }
-    if (root.right) {
-      _depth(root.right, str + '->', result);
-    }
-    if (!root.left && !root.right) {
-      result.push(str);
-    }
+    if (node.left) dfs(node.left);
+    if (node.right) dfs(node.right);
+    cur.pop();
   }
-}
+  dfs(root);
+  return res;
+};
