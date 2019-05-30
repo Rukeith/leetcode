@@ -1,6 +1,6 @@
 /**
  * Definition for isBadVersion()
- * 
+ *
  * @param {integer} version number
  * @return {boolean} whether the version is bad
  * isBadVersion = function(version) {
@@ -21,8 +21,8 @@ var solution = function(isBadVersion) {
     let min = 0;
     let max = n;
     while (max > min) {
-      let mid = min + Math.floor((max - min) / 2);
-      isBadVersion(mid) ? max = mid : min = mid + 1;
+      let mid = min + ~~((max - min) / 2);
+      isBadVersion(mid) ? (max = mid) : (min = mid + 1);
     }
     return max;
   };
