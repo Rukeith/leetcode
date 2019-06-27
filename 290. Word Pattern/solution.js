@@ -10,7 +10,10 @@ var wordPattern = function(pattern, str) {
 
   if (str.length === pattern.length) {
     for (let i = 0; i < str.length; i++) {
-      if (mapPat[pattern[i]] === str[i] || (!mapPat[pattern[i]] && !mapStr[str[i]])) {
+      if (
+        mapPat[pattern[i]] === str[i] ||
+        (!mapPat[pattern[i]] && !mapStr[str[i]])
+      ) {
         mapPat[pattern[i]] = str[i];
         mapStr[str[i]] = pattern[i];
         continue;
