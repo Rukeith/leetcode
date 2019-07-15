@@ -3,31 +3,22 @@
  * @return {string}
  */
 var reverseVowels = function(s) {
-  if (s === null || s.length === 0) {
-    return s;
+  const vowel = "aeiouAEIOU";
+  const array = s.split("");
+
+  for (let i = 0, j = array.length - 1; i < j; ) {
+    if (vowel.indexOf(array[i]) > -1) {
+      if (vowel.indexOf(array[j]) > -1) {
+        const tmp = array[j];
+        array[j] = array[i];
+        array[i] = tmp;
+        i++;
+      }
+      j--;
+    } else {
+      i++;
+    }
   }
 
-  let tmp;
-  let low = 0;
-  let high = s.length - 1;
-  const chars = s.split('');
-  const vowels = 'aeiouAEIOU';
-  
-  while (high > low) {
-    while(high > low && vowels.indexOf(chars[low]) === -1) {
-      low++;
-    }
-
-    while(high > low && vowels.indexOf(chars[high]) === -1) {
-      high--;
-    }
-
-    tmp = chars[high];
-    chars[high] = chars[low];
-    chars[low] = tmp;
-    low++;
-    high--;
-  }
-
-  return chars.join('');
+  return array.join("");
 };

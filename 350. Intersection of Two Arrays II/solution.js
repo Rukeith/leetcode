@@ -4,16 +4,11 @@
  * @return {number[]}
  */
 var intersect = function(nums1, nums2) {
-  const store = nums1.reduce((map, n) => {
-    map[n] = (map[n] + 1) || 1;
-    return map;
-  }, {});
-    
-  return nums2.filter(n => {
-    if (store[n]) {
-      store[n]--;
-      return true;
+  return nums1.filter(n => {
+    const idx = nums2.indexOf(n);
+    if (idx !== -1) {
+      nums2.splice(idx, 1);
     }
-    return false;
+    return idx !== -1;
   });
 };
