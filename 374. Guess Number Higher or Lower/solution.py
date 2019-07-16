@@ -3,17 +3,21 @@
 # @return -1 if my number is lower, 1 if my number is higher, otherwise return 0
 # def guess(num):
 
+
 class Solution(object):
-  def guessNumber(self, n):
-    """
-    :type n: int
-    :rtype: int
-    """
-    upper_bound = n
-    lower_bound = 1
-    while(True):
-      cur_guess = (lower_bound + upper_bound) / 2
-      res = guess(cur_guess)
-      if res == 0: return cur_guess
-      elif res == 1: lower_bound = (lower_bound + upper_bound + 1) / 2
-      else: upper_bound = (lower_bound + upper_bound - 1) / 2
+    def guessNumber(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        l = 0
+        r = n
+
+        while l <= r:
+            m = (l + r) // 2
+            if guess(m) == 0:
+                return m
+            elif guess(m) == 1:
+                l = m + 1
+            else:
+                r = m - 1

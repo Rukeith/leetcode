@@ -4,17 +4,20 @@
       int guess(int num); */
 
 public class Solution extends GuessGame {
-  public int guessNumber(int n) {
-    int hi = n;
-    int lo = 0;
-    int mid = 0;
-    while(lo <= hi) {
-      mid = lo + (hi - lo) / 2;
-      int currGuess = guess(mid);
-      if (currGuess == 0) return mid;
-      if (currGuess == -1) hi = mid - 1;
-      if (currGuess == 1) lo = mid + 1;
+    public int guessNumber(int n) {
+        int left = 1;
+        int right = n;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            if (guess(mid) == 0) {
+                return mid;
+            }
+            if (guess(mid) == -1) {
+                right = mid - 1;
+            } else if (guess(mid) == 1){
+                left = mid + 1;
+            }
+        }
+        return left;
     }
-    return 0;
-  }
 }

@@ -4,11 +4,10 @@
  * @return {character}
  */
 var findTheDifference = function(s, t) {
-  let a = 0;
-  s = s + t;
-  
-  for (let i = 0; i < s.length; i++) {
-    a ^= s.charCodeAt(i)
+  const n = s + t;
+  let res = 0;
+  for (let i = 0; i < n.length; i++) {
+    res = res ^ n[i].charCodeAt();
   }
-  return String.fromCharCode(a);
+  return String.fromCharCode(res);
 };

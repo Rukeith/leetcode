@@ -5,8 +5,8 @@
  */
 var canConstruct = function(ransomNote, magazine) {
   if (ransomNote.length > magazine.length) return false;
-  const ransomNoteArr = ransomNote.split('');
+  const ransomNoteArr = ransomNote.split("");
   const oldMagazineLength = magazine.length;
-  ransomNoteArr.forEach((item,index) => magazine = magazine.replace(item,''));
-  return (oldMagazineLength === magazine.length + ransomNoteArr.length)
+  ransomNoteArr.forEach(item => (magazine = magazine.replace(item, "")));
+  return oldMagazineLength === magazine.length + ransomNoteArr.length;
 };
