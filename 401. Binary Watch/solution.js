@@ -3,10 +3,10 @@
  * @return {string[]}
  */
 var readBinaryWatch = function(num) {
-  const getBitAmount = (n) => {
+  const getBitAmount = n => {
     let ans = 0;
     while (n > 0) {
-      ans += (n % 2);
+      ans += n % 2;
       n = Math.floor(n / 2);
     }
     return ans;
@@ -22,15 +22,15 @@ var readBinaryWatch = function(num) {
   }
 
   const ans = [];
-  
+
   for (let i = 0; i <= num; i++) {
     if (!(bitList[i] && bitList[num - i])) continue;
-    bitList[i].map((h) => {
+    bitList[i].map(h => {
       if (h < 12) {
         const hStr = `${h}:`;
-        bitList[num - i].map((m) => {
+        bitList[num - i].map(m => {
           if (m < 60) {
-            ans.push(hStr + (m < 10 ? '0' : '') + m);
+            ans.push(hStr + (m < 10 ? "0" : "") + m);
           }
         });
       }

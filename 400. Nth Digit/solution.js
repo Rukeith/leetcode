@@ -16,5 +16,5 @@ var findNthDigit = function(n) {
 
   start += (n - 1) / len;
   const s = start.toString();
-  return s.charCodeAt((n - 1) % len) - '0'.charCodeAt(0);
+  return s.charCodeAt((n - 1) % len) - "0".charCodeAt(0);
 };
