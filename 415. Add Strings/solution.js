@@ -4,21 +4,22 @@
  * @return {string}
  */
 var addStrings = function(num1, num2) {
-  let num1Len = num1.length;
-  let num2Len = num2.length;
-  let maxLen = num1Len > num2Len ? num1Len : num2Len;
-  maxLen++;
+  const arr1 = num1.split("");
+  const arr2 = num2.split("");
+  for (let i = 0; i < arr1.length; i++) arr1[i] = Number(arr1[i]);
+  for (let i = 0; i < arr2.length; i++) arr2[i] = Number(arr2[i]);
+
   let carry = 0;
-  let total = '';
-  for (let i = 0; i < maxLen; i++) {
-    if (i === (maxLen - 1) && carry === 0) continue;
-    let pos = num1Len - i - 1;
-    const a = 0 > pos ? 0 : (num1.charCodeAt(pos) - 48);
-    pos = num2Len - i - 1;
-    const b = 0 > pos ? 0 : (num2.charCodeAt(pos) - 48);
-    const t =  a + b + carry;
-    carry = Math.floor(t / 10);
-    total =  (t % 10) + total;
+  let i = arr1.length - 1;
+  let j = arr2.length - 1;
+  let sum = "";
+  while (i >= 0 || j >= 0 || carry == 1) {
+    const s1 = i >= 0 ? arr1[i] : 0;
+    const s2 = j >= 0 ? arr2[j] : 0;
+    sum = ((s1 + s2 + carry) % 10) + sum;
+    carry = s1 + s2 + carry > 9 ? 1 : 0;
+    i--;
+    j--;
   }
-  return total;
+  return sum;
 };
