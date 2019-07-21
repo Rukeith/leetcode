@@ -3,14 +3,21 @@
  * @return {number}
  */
 var arrangeCoins = function(n) {
-  let lo = 1, hi = n;
-  while (hi >= lo) {
-    const mid = Math.floor((lo + hi) / 2);
-    if (n >= mid * (mid + 1) / 2) {
-      lo = mid + 1;
+  if (n === 0 || n === 1) {
+    return n;
+  }
+
+  let first = 0;
+  let last = n;
+  while (first < last) {
+    const mid = Math.floor(first + (last - first) / 2);
+    const target = ((mid + 1) * mid) / 2;
+    if (target > n) {
+      last = mid;
     } else {
-      hi = mid - 1;
+      first = mid + 1;
     }
   }
-  return lo - 1;
+
+  return first - 1;
 };
