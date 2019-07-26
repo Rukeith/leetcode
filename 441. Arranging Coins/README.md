@@ -1,30 +1,30 @@
-# [441. Arranging Coins](https://leetcode.com/problems/arranging-coins/description)
-You have a total of *n* coins that you want to form in a staircase shape, where every *k-th* row must have exactly *k* coins.
+# [441. Arranging Coins](https://leetcode.com/problems/arranging-coins/)
 
-Given *n*, find the total number of **full** staircase rows that can be formed.
+You have a total of _n_ coins that you want to form in a staircase shape, where every _k-th_ row must have exactly _k_ coins.
 
-*n* is a non-negative integer and fits within the range of a 32-bit signed integer.
+Given _n_, find the total number of **full** staircase rows that can be formed.
+
+_n_ is a non-negative integer and fits within the range of a 32-bit signed integer.
 
 **Example 1:**
-```
-n = 5
 
-The coins can form the following rows:
-¤
-¤ ¤
-¤ ¤
+    n = 5
 
-Because the 3rd row is incomplete, we return 2.
-```
+    The coins can form the following rows:
+    ¤
+    ¤ ¤
+    ¤ ¤
+
+    Because the 3rd row is incomplete, we return 2.
+
 **Example 2:**
-```
-n = 8
 
-The coins can form the following rows:
-¤
-¤ ¤
-¤ ¤ ¤
-¤ ¤
+    n = 8
 
-Because the 4th row is incomplete, we return 3.
-```
+    The coins can form the following rows:
+    ¤
+    ¤ ¤
+    ¤ ¤ ¤
+    ¤ ¤
+
+    Because the 4th row is incomplete, we return 3.

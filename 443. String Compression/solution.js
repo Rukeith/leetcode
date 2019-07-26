@@ -7,8 +7,8 @@ var compress = function(chars) {
     if (chars[i] === chars[i - 1]) count++;
     else {
       if (count > 1) {
-        i -= (count - 1);
-        chars.splice(i, count - 1, ...count.toString().split(''));
+        i -= count - 1;
+        chars.splice(i, count - 1, ...count.toString().split(""));
         i += Math.trunc(Math.log10(count)) + 1;
       }
       count = 1;

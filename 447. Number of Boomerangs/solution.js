@@ -6,10 +6,9 @@ var numberOfBoomerangs = function(points) {
   let ans = 0;
   const len = points.length;
 
-  const getDis = (i, j) => (
+  const getDis = (i, j) =>
     Math.pow(points[i][0] - points[j][0], 2) +
-    Math.pow(points[i][1] - points[j][1], 2)
-  );
+    Math.pow(points[i][1] - points[j][1], 2);
 
   for (let i = 0; i < len; i++) {
     const p = new Map();
@@ -17,8 +16,8 @@ var numberOfBoomerangs = function(points) {
       if (i !== j) {
         const dis = getDis(i, j);
         const count = ~~p.get(dis);
-        ans += count
-        p.set(dis, count + 1)
+        ans += count;
+        p.set(dis, count + 1);
       }
     }
   }
