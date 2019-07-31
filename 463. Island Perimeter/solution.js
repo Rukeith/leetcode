@@ -3,22 +3,18 @@
  * @return {number}
  */
 var islandPerimeter = function(grid) {
-  let island = 0;
-  let neighbours = 0;
+  let count = 0;
 
-  for (let i = 0; i < grid.length; i++) {
-    for (let j = 0; j < grid[i].length; j++) {
-      if (grid[i][j] === 1) {
-        island++;
-        if (i + 1 < grid.length && grid[i + 1][j] === 1) {
-          neighbours++;
-        }      
-        if (j + 1 < grid[i].length && grid[i][j + 1] === 1) {
-          neighbours++;
-        }        
-      } 
+  for (let row = 0; row < grid.length; row++) {
+    for (let col = 0; col < grid[0].length; col++) {
+      if (grid[row][col] === 1) {
+        if (row === 0 || grid[row - 1][col] === 0) count++;
+        if (col === 0 || grid[row][col - 1] === 0) count++;
+        if (row === grid.length - 1 || grid[row + 1][col] === 0) count++;
+        if (col === grid[0].length - 1 || grid[row][col + 1] === 0) count++;
+      }
     }
   }
 
-  return island * 4 - neighbours * 2;
+  return count;
 };
