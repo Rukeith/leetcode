@@ -1,19 +1,15 @@
 /**
- * @param {number[]} findNums
- * @param {number[]} nums
+ * @param {number[]} nums1
+ * @param {number[]} nums2
  * @return {number[]}
  */
-var nextGreaterElement = function(findNums, nums) {
-  return findNums.map(n => {
-    let found = nums.indexOf(n);
-    
-    if (found !== -1) {
-      // find the next greater element's index
-      while (nums[found] < n) ++found;
-      // -1 if not found
-      found = (found >= nums.length) ? -1 : nums[found];
+var nextGreaterElement = function(nums1, nums2) {
+  const map = {};
+  nums2.forEach((num, i) => map[num] = i);
+  return nums1.map(num => {
+    for (let i = map[num]; i < nums2.length; i++) {
+      if (nums2[i] > num) return nums2[i];
     }
-
-    return found;
+    return -1;
   });
 };
