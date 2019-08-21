@@ -1,62 +1,38 @@
 /**
- * 501. Find Mode in Binary Search Tree
- * Given a binary search tree (BST) with duplicates, find all the mode(s) (the most frequently occurred element) in the given BST.
- * Assume a BST is defined as follows:
- * The left subtree of a node contains only nodes with keys less than or equal to the node's key.
- * The right subtree of a node contains only nodes with keys greater than or equal to the node's key.
- * Both the left and right subtrees must also be binary search trees.
- * 
- * For example:
- * Given BST [1,null,2,2],
- *    1
- *     \
- *      2
- *     /
- *    2
- * return [2].
- * Note: If a tree has more than one mode, you can return them in any order.
- * Follow up: Could you do that without using any extra space? (Assume that the implicit stack space incurred due to recursion does not count).
- * 
  * Definition for a binary tree node.
  * function TreeNode(val) {
  *     this.val = val;
  *     this.left = this.right = null;
  * }
- * 
+ */
+/**
  * @param {TreeNode} root
  * @return {number[]}
- * 
- * URL:
- * https://leetcode.com/problems/find-mode-in-binary-search-tree/description/
  */
 var findMode = function(root) {
-  if (root === null) return [];
+  let max = 0;
+  let curr = 0;
+  let nums = [];
+  let preNode;
+  inOrder(root);
 
-  let ret, prevValue, currentCount;
-  let maxCount = Number.MIN_VALUE;
-
-  const traversal = (root, func) => {
-    if (root === null) return root;
-    traversal(root.left, func);
-    func(root.val);
-    traversal(root.right, func);
-  };
-  
-  traversal(root, (val) => {
-    if (prevValue === undefined) {
-      prevValue = val;
-      currentCount  = 1;
+  function inOrder(node) {
+    if (!node) return;
+    inOrder(node.left);
+    if (preNode && node.val === preNode.val) {
+      curr++;
     } else {
-      (prevValue === val) ? currentCount++ : currentCount = 1;
+      curr = 1;
     }
-
-    if (currentCount > maxCount) {
-      ret = [];
-      ret.push(val);
-      maxCount = currentCount;
-    } else if (currentCount === maxCount) ret.push(val);
-    prevValue = val;
-  });
-  
-  return ret;
+    if (curr === max) {
+      nums.push(node.val);
+    }
+    if (curr > max) {
+      nums = [node.val];
+      max = curr;
+    }
+    preNode = node;
+    inOrder(node.right);
+  }
+  return nums;
 };
