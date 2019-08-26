@@ -12,13 +12,13 @@
 var diameterOfBinaryTree = function(root) {
   let res = 0;
   getDepth(root);
-  return res > 0 ? res - 1 : 0;
-  
+  return res;
+
   function getDepth(node) {
     if (!node) return 0;
     const left = getDepth(node.left);
     const right = getDepth(node.right);
-    res = Math.max(res, 1 + left + right);
+    res = Math.max(res, left + right);
     return Math.max(left, right) + 1;
   }
 };
