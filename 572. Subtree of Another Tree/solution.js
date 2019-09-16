@@ -11,12 +11,32 @@
  * @return {boolean}
  */
 var isSubtree = function(s, t) {
-  function traverse(temp) {
-    if (!temp) return '';
-    return `^${temp.val},${traverse(temp.left)},${traverse(temp.right)}$`;
+  if (!s || !t) {
+    return !s && !t;
   }
-
-  const sTraversed = traverse(s);
-  const tTraversed = traverse(t);
-  return sTraversed.indexOf(tTraversed) > -1;
+  if (s.val === t.val && isEqual(s, t)) {
+    return true;
+  }
+  return isSubtree(s.left, t) || isSubtree(s.right, t);
 };
+
+function isEqual(t1, t2) {
+  if (!t1 || !t2) {
+    return t1 === t2;
+  }
+  if (t1.val === t2.val) {
+    return isEqual(t1.left, t2.left) && isEqual(t1.right, t2.right);
+  }
+  return false;
+}
+
+// var isSubtree = function(s, t) {
+//   function traverse(temp) {
+//     if (!temp) return "";
+//     return `^${temp.val},${traverse(temp.left)},${traverse(temp.right)}$`;
+//   }
+
+//   const sTraversed = traverse(s);
+//   const tTraversed = traverse(t);
+//   return sTraversed.indexOf(tTraversed) > -1;
+// };
