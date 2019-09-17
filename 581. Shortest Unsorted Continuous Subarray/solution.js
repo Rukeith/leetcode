@@ -3,22 +3,26 @@
  * @return {number}
  */
 var findUnsortedSubarray = function(nums) {
-  let left;
-  let right;
-  let min = Number.MAX_VALUE;
-  let max = -Number.MAX_VALUE;
-  
-  for (let i = nums.length - 1; i >= 0; i--) {
-    const num = nums[i];
-    min = Math.min(min, num);
-    if (num > min) left = i;
-  }
+  let end = 0;
+  let max = -Infinity;
+  let min = Infinity;
+  let start = 0;
+
+  nums.forEach((ele, i) => {
+    max = Math.max(ele, max);
+    if (ele < max) {
+      min = Math.min(min, ele);
+      end = i;
+    }
+  });
+
+  if (end === 0) return end;
   for (let i = 0; i < nums.length; i++) {
-    const num = nums[i];
-    max = Math.max(max, num);
-    if (num < max) right = i;
+    if (min < nums[i]) {
+      start = i;
+      break;
+    }
   }
-  
-  if (!left && !right) return 0;
-  return right - left + 1;
+
+  return end - start + 1;
 };
