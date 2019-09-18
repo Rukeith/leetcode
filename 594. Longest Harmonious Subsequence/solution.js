@@ -3,22 +3,16 @@
  * @return {number}
  */
 var findLHS = function(nums) {
-  if (nums.length < 2) return 0;
+  let res = 0;
+  const map = new Map();
 
-  let count = new Map();
-  let longest = 0;
+  nums.forEach(n => (map.has(n) ? map.set(n, map.get(n) + 1) : map.set(n, 1)));
 
-  for (let num of nums) {
-    count.set(num, count.get(num) ? count.get(num) + 1 : 1);
-
-    if (count.has(num + 1)) {
-      longest = Math.max(longest, count.get(num + 1) + count.get(num));
-    }
-
-    if (count.has(num - 1)) {
-      longest = Math.max(longest, count.get(num - 1) + count.get(num));
+  for (let key of map.keys()) {
+    if (map.has(key - 1)) {
+      res = Math.max(res, map.get(key) + map.get(key - 1));
     }
   }
 
-  return longest;
+  return res;
 };
